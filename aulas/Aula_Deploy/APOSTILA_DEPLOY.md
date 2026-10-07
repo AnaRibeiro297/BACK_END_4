@@ -140,27 +140,38 @@ app.listen(PORT, () => {
 });
 ```
 
-### Passo 3: Conectando no Render
+### Passo 3: O Banco de Dados MySQL na Nuvem (Aiven)
+Como estamos usando MySQL bruto e o Render só fornece PostgreSQL gratuitamente, adotaremos uma **arquitetura de nuvem híbrida** (muito comum em empresas reais). Vamos hospedar o código no Render e o banco de dados no Aiven.
+
+1. Acesse [aiven.io](https://aiven.io) e crie uma conta.
+2. Clique em *Create Service*, escolha o **MySQL** e selecione o plano "Hobbyist" (Free).
+3. Copie as credenciais fornecidas (Host, Porta, User, Password).
+4. Usando o **DBeaver**, **MySQL Workbench** ou a extensão de banco do **VS Code**, conecte-se a esse banco remoto usando os dados copiados.
+5. Abra o seu `database.sql` e execute-o para criar as tabelas. *(Atenção: Não rode comandos `CREATE DATABASE` ou `USE`, comece direto no `CREATE TABLE`!)*
+
+### Passo 4: Conectando no Render
 1. Acesse [render.com](https://render.com) e crie uma conta usando o seu **GitHub**.
 2. No painel (Dashboard), clique em **New** e escolha **Web Service**.
 3. Escolha a opção *Build and deploy from a Git repository*.
 4. Conecte o repositório da sua API (ex: `BACK_END_4`).
 5. Se a sua API não está na raiz do repositório (como é o nosso caso agora no Sabor Digital), preencha o campo **Root Directory** com o nome da pasta (ex: `projetos/sabor_digital`).
 
-### Passo 4: Configurando o Build e Start
+### Passo 5: Configurando o Build e Start
 O Render vai perguntar como ele constrói e como ele roda sua aplicação:
 - **Build Command:** `npm install`
 - **Start Command:** `npm start`
 
-### Passo 5: As Variáveis de Ambiente
+### Passo 6: As Variáveis de Ambiente e a Conexão Mágica
 Role a página até a seção **Environment Variables** e clique em *Add Environment Variable*.
-Copie tudo o que você tem no seu arquivo `.env` local e cole aqui. Exemplo:
-- Key: `JWT_SECRET` | Value: `minha_senha_super_secreta`
-- Key: `DB_HOST` | Value: `url_do_banco_na_nuvem`
+É aqui que o Render e o Aiven conversam! Copie as variáveis do seu `.env` local, mas substitua os valores do banco de dados pelos valores fornecidos pelo Aiven. Exemplo:
+- Key: `DB_HOST` | Value: `mysql-xxxx-aiven.aivencloud.com`
+- Key: `DB_USER` | Value: `avnadmin`
+- Key: `DB_PASSWORD` | Value: `sua_senha_do_aiven`
+- Key: `DB_PORT` | Value: `26002`
 
-### Passo 6: Deploy!
+### Passo 7: Deploy!
 Clique em **Create Web Service**.
-Uma tela de console preta vai abrir mostrando os logs do seu servidor sendo criado no Linux. Se no final aparecer a mensagem `Your service is live 🎉`, parabéns! Você tem um link HTTPS pronto para colocar no currículo.
+Uma tela preta mostrará os logs do Linux. Se no final aparecer a mensagem `Your service is live 🎉`, parabéns! A sua API no Render já está se conectando com sucesso ao seu MySQL no Aiven.
 
 ---
 

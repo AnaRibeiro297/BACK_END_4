@@ -289,16 +289,16 @@
 
         <!-- Slide 7 -->
         <div class="slide">
-            <h2>Conhecendo o Render</h2>
-            <p>Para o nosso deploy, utilizaremos o <strong>Render.com</strong>, o substituto moderno do Heroku.</p>
+            <h2>A Arquitetura da Nossa Aula</h2>
+            <p>Usaremos uma solução híbrida muito requisitada pelo mercado: Nuvem distribuída.</p>
             <div class="grid">
                 <div class="card paas">
-                    <h3>CI / CD</h3>
-                    <p>Basta dar <code>git push</code>. O Render enxerga a mudança no Github e reinicia o servidor sozinho.</p>
+                    <h3>O Motor (Render)</h3>
+                    <p>Nossa <strong>API Node.js</strong> será hospedada no Render. Ele ficará encarregado do CI/CD, SSL e de ler nosso repositório no GitHub.</p>
                 </div>
-                <div class="card paas">
-                    <h3>Spin Down</h3>
-                    <p>No plano gratuito, se a API ficar 15 min sem acesso, ela "dorme". O primeiro acesso seguinte demora até 50 segundos para acordar o app.</p>
+                <div class="card paas" style="border-color: #f59e0b;">
+                    <h3>O Banco (Aiven)</h3>
+                    <p>Como utilizamos MySQL nativo, nosso <strong>Banco de Dados</strong> ficará na nuvem pelo Aiven.io. O Render se conectará nele pela internet via `.env`.</p>
                 </div>
             </div>
         </div>
