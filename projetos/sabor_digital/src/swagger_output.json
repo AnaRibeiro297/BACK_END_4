@@ -42,6 +42,8 @@
       },
       "post": {
         "description": "",
+<<<<<<< HEAD:src/swagger_output.json
+=======
         "consumes": [
           "multipart/form-data"
         ],
@@ -94,16 +96,20 @@
             "description": "Imagem do produto (JPEG, PNG)"
           }
         ],
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
         "responses": {
           "201": {
             "description": "Created"
           },
+<<<<<<< HEAD:src/swagger_output.json
+=======
           "401": {
             "description": "Unauthorized"
           },
           "403": {
             "description": "Forbidden"
           },
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
           "500": {
             "description": "Internal Server Error"
           }
@@ -132,15 +138,20 @@
       },
       "put": {
         "description": "",
+<<<<<<< HEAD:src/swagger_output.json
+=======
         "consumes": [
           "multipart/form-data"
         ],
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
         "parameters": [
           {
             "name": "id",
             "in": "path",
             "required": true,
             "type": "string"
+<<<<<<< HEAD:src/swagger_output.json
+=======
           },
           {
             "name": "authorization",
@@ -182,18 +193,22 @@
             "in": "formData",
             "type": "file",
             "required": false
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
           },
+<<<<<<< HEAD:src/swagger_output.json
+=======
           "401": {
             "description": "Unauthorized"
           },
           "403": {
             "description": "Forbidden"
           },
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
           "500": {
             "description": "Internal Server Error"
           }
@@ -207,23 +222,29 @@
             "in": "path",
             "required": true,
             "type": "string"
+<<<<<<< HEAD:src/swagger_output.json
+=======
           },
           {
             "name": "authorization",
             "in": "header",
             "type": "string"
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
           }
         ],
         "responses": {
           "200": {
             "description": "OK"
           },
+<<<<<<< HEAD:src/swagger_output.json
+=======
           "401": {
             "description": "Unauthorized"
           },
           "403": {
             "description": "Forbidden"
           },
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
           "500": {
             "description": "Internal Server Error"
           }
@@ -387,6 +408,8 @@
           }
         }
       }
+<<<<<<< HEAD:src/swagger_output.json
+=======
     },
     "/auth/registrar": {
       "post": {
@@ -470,6 +493,7 @@
           }
         }
       }
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/swagger_output.json
     }
   }
 }

@@ -1,3 +1,15 @@
+<<<<<<< HEAD:src/services/UsuarioService.js
+const salt = await bcrypt.genSalt(10);
+const senhaHash = await bcrypt.hash(senha, salt);
+
+const senhaCorreta = await bcrypt.compare(senhaDigitada, usuario.senha);
+
+const token = jwt.sign(
+  { id: usuario.id, papel: usuario.papel }, 
+  process.env.JWT_SECRET,
+  { expiresIn: '8h' }
+);
+=======
 const UsuarioRepository = require('../repositories/UsuarioRepository');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -78,3 +90,4 @@ class UsuarioService {
 }
 
 module.exports = new UsuarioService();
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/src/services/UsuarioService.js

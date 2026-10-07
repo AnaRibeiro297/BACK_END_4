@@ -57,7 +57,11 @@ CREATE TABLE IF NOT EXISTS item_pedido (
     FOREIGN KEY (produto_id) REFERENCES produto(id) ON DELETE RESTRICT
 );
 
+<<<<<<< HEAD:database.sql
+--7. Tabela de usuarios
+=======
 -- 7. Tabela de Usuários
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/database.sql
 CREATE TABLE IF NOT EXISTS usuario (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100) NOT NULL,
@@ -65,7 +69,12 @@ CREATE TABLE IF NOT EXISTS usuario (
     senha VARCHAR(255) NOT NULL,
     papel ENUM('admin', 'cliente') DEFAULT 'cliente',
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+<<<<<<< HEAD:database.sql
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON
+    UPDATE CURRENT_TIMESTAMP
+=======
     atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+>>>>>>> 4e253939f6d1227b6a015f3dd0ab95ad4a2dce1b:projetos/sabor_digital/database.sql
 );
 
 -- População inicial (Opcional)
@@ -74,3 +83,4 @@ INSERT INTO produto (nome, descricao, preco, categoria, disponivel) VALUES
 ('Lasanha de Frango', 'Lasanha com frango desfiado e queijo', 42.00, 'Massa', true),
 ('Pizza Margherita', 'Pizza de mussarela, tomate e manjericão', 50.00, 'Pizza', true),
 ('Suco de Laranja', 'Suco natural 500ml', 12.00, 'Bebida', true);
+

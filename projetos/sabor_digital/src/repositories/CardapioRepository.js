@@ -31,6 +31,7 @@ class CardapioRepository {
             const [result] = await connection.query(
                 'INSERT INTO cardapio (nome, descricao, disponivel) VALUES (?, ?, ?)',
                 [nome, descricao, disponivel]
+                
             );
             const cardapioId = result.insertId;
 
